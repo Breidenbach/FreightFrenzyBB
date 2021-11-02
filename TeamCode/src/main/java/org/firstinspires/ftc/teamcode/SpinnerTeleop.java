@@ -13,7 +13,7 @@ public class SpinnerTeleop extends LinearOpMode {
         SpinnerCommon spinner = new SpinnerCommon(this);
 
         waitForStart();
-        // this is a test
+
         while (opModeIsActive()) {
 
             spinner.excuteTeleop();

@@ -14,7 +14,9 @@ import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-public class SpinnerHardware {
+import org.firstinspires.ftc.teamcode.bases.HardwareBase;
+
+public class SpinnerHardware extends HardwareBase {
     public DcMotor spinnerMotor = null;
 
     HardwareMap hwMap =  null;
