@@ -596,7 +596,33 @@ public class DrivetrainCommon {
     }
 
     public void printData(){
-        curOpMode.telemetry.addData("Distance", robot.ds1.getDistance(DistanceUnit.METER));
+        curOpMode.telemetry.addData("Distance 1: ", robot.ds1.getDistance(DistanceUnit.INCH));
+        curOpMode.telemetry.addData("Distance 2: ", robot.ds2.getDistance(DistanceUnit.INCH));
+        curOpMode.telemetry.addData("Detection: ", detect());
+    }
+
+    public int detect(){
+        double read1 = robot.ds1.getDistance(DistanceUnit.INCH);
+        double read2 = robot.ds2.getDistance(DistanceUnit.INCH);
+
+        /*
+        Sensor 1: 1
+        Sensor 2: 2
+        Neither: 3
+        Unknown: 0
+         */
+
+        double minDist = 50;
+
+        if(read1 >= minDist && read2 >= minDist){
+            return 3;
+        } else if (read1 <= minDist){
+            return 1;
+        } else if (read1 <= minDist){
+            return 2;
+        } else {
+            return 1;
+        }
     }
 
 }
