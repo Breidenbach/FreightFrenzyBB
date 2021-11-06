@@ -25,8 +25,13 @@ public class SpinnerCommon {
 //            robot.spinnerMotor.setPower(0);
 //        }
 
-        robot.spinnerMotor.setPower(curOpMode.gamepad1.right_trigger);
-        robot.spinnerMotor.setPower(-curOpMode.gamepad1.left_trigger);
+        if (curOpMode.gamepad1.right_trigger > .05){
+            robot.spinnerMotor.setPower(curOpMode.gamepad1.right_trigger);
+        } else {
+            robot.spinnerMotor.setPower(-curOpMode.gamepad1.left_trigger);
+        }
+
+//        robot.spinnerMotor.setPower(1);
 
     }
 }

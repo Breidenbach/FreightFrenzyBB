@@ -1,4 +1,3 @@
-
 package org.firstinspires.ftc.teamcode;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
@@ -616,12 +615,12 @@ public class DrivetrainCommon {
 
         if(read1 >= minDist && read2 >= minDist){
             return 3;
-        } else if (read1 <= minDist){
+        } else if (read1 <= minDist && read2 >= minDist){
             return 1;
-        } else if (read1 <= minDist){
+        } else if (read2 <= minDist && read1 >= minDist){
             return 2;
         } else {
-            return 1;
+            return 0;
         }
     }
 
